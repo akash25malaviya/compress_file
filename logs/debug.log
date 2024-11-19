@@ -1,0 +1,24 @@
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /
+Not Found: /api/
+Internal Server Error: /api/compress/image/
+Traceback (most recent call last):
+  File "C:\Users\admin\Downloads\compress_file-main\compress_file-main\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\Downloads\compress_file-main\compress_file-main\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\admin\Downloads\compress_file-main\compress_file-main\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\admin\Downloads\compress_file-main\compress_file-main\venv\lib\site-packages\rest_framework\response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\admin\Downloads\compress_file-main\compress_file-main\venv\lib\site-packages\rest_framework\renderers.py", line 726, in render
+    template = loader.get_template(self.template)
+  File "C:\Users\admin\Downloads\compress_file-main\compress_file-main\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: rest_framework/api.html
