@@ -78,8 +78,8 @@ class ImageCompressView(BaseCompressView):
                 }, status=status.HTTP_400_BAD_REQUEST)
 
             compressed_image_path = self.save_file(compressed_image_data, f'compressed_image_{file_name}')
-            base_url = request.build_absolute_uri('/').rstrip('/')
-            # base_url="https://api.compressvideo.in"
+            # base_url = request.build_absolute_uri('/').rstrip('/')
+            base_url="https://prod.api.compressvideo.in"
             full_image_url = base_url + compressed_image_path
 
             return Response({
@@ -163,8 +163,8 @@ class PdfCompressView(BaseCompressView):
                         'message': "Sorry, Your PDF file is already very well compressed."
                     }, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
-                base_url = request.build_absolute_uri('/').rstrip('/')
-                # base_url = "https://api.compressvideo.in"
+                # base_url = request.build_absolute_uri('/').rstrip('/')
+                base_url = "https://prod.api.compressvideo.in"
                 logger.info({"base_url": base_url})
                 
                 full_pdf_url = base_url + settings.MEDIA_URL + output_filename
@@ -252,8 +252,8 @@ class DocxCompressView(APIView):
                 if compressed_size >= original_size:
                     os.remove(output_filepath)
                     return Response({'message': "Sorry, Your Doc or Docx file is already very well compressed."}, status=status.HTTP_400_BAD_REQUEST)
-                base_url = request.build_absolute_uri('/').rstrip('/')
-                # base_url = "https://api.compressvideo.in"
+                # base_url = request.build_absolute_uri('/').rstrip('/')
+                base_url = "https://prod.api.compressvideo.in"
                 full_doc_url = base_url + settings.MEDIA_URL + output_filename
 
                 return Response({'compressed_doc': full_doc_url, "file_name": file_name, "file_type": uploaded_file.content_type}, status=status.HTTP_200_OK)
@@ -300,8 +300,8 @@ class VideoCompressView(BaseCompressView):
                     os.remove(output_filepath)
                     return Response({'message': "Sorry, Your Video is already very well compressed."}, status=status.HTTP_400_BAD_REQUEST)
 
-                base_url = request.build_absolute_uri('/').rstrip('/')
-                # base_url = "https://api.compressvideo.in"
+                # base_url = request.build_absolute_uri('/').rstrip('/')
+                base_url = "https://prod.api.compressvideo.in"
                 full_video_url = base_url + settings.MEDIA_URL + output_filename
                 
                 return Response({'compressed_video': full_video_url,"file_name":file_name,"file_type":file_type}, status=status.HTTP_200_OK)
